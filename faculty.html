@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="/faculty.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .active-content {
+            display: block;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        li:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Faculty Dashboard</h1>
+        <ul>
+            <li onclick="showContent('createQuizContent')">Create quizzes</li>
+            <div id="createQuizContent" class="section-content">
+                <h2>Create Quizzes</h2>
+                <p>Content related to creating quizzes goes here.</p>
+            </div>
+            <li onclick="showContent('scheduleQuizContent')">Schedule quizzes</li>
+            <div id="scheduleQuizContent" class="section-content">
+                <h2>Schedule Quizzes</h2>
+                <p>Content related to scheduling quizzes goes here.</p>
+            </div>
+            <li onclick="showContent('conductQuizContent')">Conduct quizzes</li>
+            <div id="conductQuizContent" class="section-content">
+                <h2>Conduct Quizzes</h2>
+                <p>Content related to conducting quizzes goes here.</p>
+            </div>
+            <li onclick="showContent('analyzeResultsContent')">Analyze results</li>
+            <div id="analyzeResultsContent" class="section-content">
+                <h2>Analyze Results</h2>
+                <p>Content related to analyzing quiz results goes here.</p>
+            </div>
+            <li onclick="showContent('engageStudentsContent')">Engage students</li>
+            <div id="engageStudentsContent" class="section-content">
+                <h2>Engage Students</h2>
+                <p>Content related to engaging students goes here.</p>
+            </div>
+        </ul>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            var content = document.getElementById(contentId);
+            content.classList.toggle("active-content");
+        }
+    </script>
+</body>
+</html>

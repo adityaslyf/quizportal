@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/student.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content-container {
+            display: none;
+            padding: 10px;
+        }
+        .content-container.active {
+            display: block;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        li:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        <ul>
+            <li onclick="toggleContent('takeAssignedQuiz')">Take assigned quizzes</li>
+            <div class="content-container" id="takeAssignedQuiz">
+                <ul>
+                    <li onclick="toggleContent('quiz1Content')">Quiz 1</li>
+                    <div class="content-container" id="quiz1Content">
+                        <div class="quiz-container">
+                            <div class="radio-input">
+                                <div class="info">
+                                    <span class="question">What does CSS stand for?</span>
+                                    <span class="steps">3/10</span>
+                                </div>
+                                <input type="radio" id="value-1" name="value-radio" value="value-1">
+                                <label for="value-1">Computer Style Sheets</label>
+                                <input type="radio" id="value-2" name="value-radio" value="value-2">
+                                <label for="value-2">Cascading Style Sheets</label>
+                                <input type="radio" id="value-3" name="value-radio" value="value-3">
+                                <label for="value-3">Creative Style Sheets</label>
+                                <span class="result success">Congratulations!</span>
+                                <span class="result error">Bad answer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <li onclick="toggleContent('quiz2Content')">Quiz 2</li>
+                    <div class="content-container" id="quiz2Content">
+                        <div class="quiz-container">
+                            <div class="radio-input">
+                                <div class="info">
+                                    <span class="question">Question for Quiz 2</span>
+                                    <span class="steps">1/5</span>
+                                </div>
+                                <!-- Add your quiz 2 content here -->
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <!-- Add other menu items here -->
+            <li onclick="toggleContent('resultContent')">View results</li>
+            <div class="content-container" id="resultContent">
+                Pass
+            </div>
+            <li onclick="toggleContent('performanceContent')">Understand performance</li>
+            <div class="content-container" id="performanceContent">
+                100%
+            </div>
+            <li onclick="toggleContent('progressContent')">Track progress</li>
+            <div class="content-container" id="progressContent">
+                100%
+            </div>
+            <li onclick="toggleContent('profileContent')">Manage profile</li>
+            <div class="content-container" id="profileContent">
+                Lorem ipsum
+            </div>
+            <li onclick="printPage()">Print results</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleContent(contentId) {
+            var contentContainer = document.getElementById(contentId);
+            contentContainer.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

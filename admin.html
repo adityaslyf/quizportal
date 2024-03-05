@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/admin.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .active-content {
+            display: block;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        li:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <ul>
+            <li onclick="showContent('manageUsers')">Manage users</li>
+            <div id="manageUsers" class="section-content">
+                <h2>Manage Users</h2>
+                <!-- Add user management content here -->
+            </div>
+            <li onclick="showContent('manageContent')">Manage content</li>
+            <div id="manageContent" class="section-content">
+                <h2>Manage Content</h2>
+                <!-- Add content management content here -->
+            </div>
+            <li onclick="showContent('analyzeData')">Analyze data</li>
+            <div id="analyzeData" class="section-content">
+                <h2>Analyze Data</h2>
+                <!-- Add data analysis content here -->
+            </div>
+            <li onclick="showContent('systemIntegrity')">Ensure system integrity</li>
+            <div id="systemIntegrity" class="section-content">
+                <h2>System Integrity</h2>
+                <!-- Add system integrity content here -->
+            </div>
+            <li onclick="showContent('monitorPerformance')">Monitor performance</li>
+            <div id="monitorPerformance" class="section-content">
+                <h2>Monitor Performance</h2>
+                <!-- Add performance monitoring content here -->
+            </div>
+        </ul>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            var content = document.getElementById(contentId);
+            content.classList.toggle("active-content");
+        }
+    </script>
+</body>
+</html>
